@@ -1,6 +1,7 @@
 from InitialiseVariables import player1board, player2board, player2board_view, player1board_view
-from Player's Turn import PlayerTurn
-from InitialiseVariables import player1board, player2board
+from PlayerTurn import PlayerTurn
+from Isallsunk import is_all_sunk
+
 print("Battle Bots!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 print(player1board)
 print(player2board)
