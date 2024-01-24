@@ -6,14 +6,18 @@ def placeships(playerA,playerB):
             print('Error. Please choose a row between 1 and 10')
         else:
             break
+        row_index = row - 1
 
     while True:
         column = input("Which Column? (Choose a CAPITAL letter between A-J)")
-        if column < "A" or column < "K":
+        if column < "A" or column > "J":
             print('Error. Please choose a column between A and J')
         else:
             break
+        column_index = column - 1
 
+def ConvertColumnToNumber(column:string):
+    retrun ord(column) - 65
 
 placeships(None,None)
 
