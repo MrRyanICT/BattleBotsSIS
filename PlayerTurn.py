@@ -15,7 +15,7 @@ def PlayerTurn (Opp_Board):
         row = int(input())
         if row < 1 or row > 10:
             print('Error. Choose a number between 1 and 10')
-    print("Enter the column, A-J")   #I suggest using A-J
+    print("Enter the column, A-J. Capital letter please")   #I suggest using A-J
     column = input()
     column = changetonum(column)
     check_hit(Opp_Board, row, column, playerships)
