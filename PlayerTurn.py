@@ -1,5 +1,6 @@
 from CheckIfHitShip import check_hit
 from InitialiseVariables import player1board_view, player2board_view, player1ships, player2ships
+from ChangeToNumber import changetonum
 
 def PlayerTurn (Opp_Board):
     if Opp_Board == player1board_view:
@@ -14,7 +15,8 @@ def PlayerTurn (Opp_Board):
         row = int(input())
         if row < 1 or row > 10:
             print('Error. Choose a number between 1 and 10')
-    print("Enter the column, 1-10")   #I suggest using A-J
+    print("Enter the column, A-J")   #I suggest using A-J
     column = input()
+    column = changetonum(column)
     check_hit(Opp_Board, row, column, playerships)
 
