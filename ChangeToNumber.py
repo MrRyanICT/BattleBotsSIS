@@ -7,3 +7,6 @@ def changetonum(column):
         if column == Letters[counter]:
             column = Numbers[counter]
             return column
+    print("Error. Enter the letter A-J in capital letters")
+    column = input()
+    changetonum(column)

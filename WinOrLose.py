@@ -4,4 +4,3 @@ def winorlose(Allsunk):
         print('player A wins!')
     else:
         print('player B wins!')
-winorlose(Allsunk)
