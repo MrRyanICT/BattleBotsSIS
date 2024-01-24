@@ -1,18 +1,14 @@
+from PlayerTurn import PlayerTurn
+from Isallsunk import is_all_sunk
 
-
-def check_hit(board, row, column):
-    hit = False
-    if board[row][column] != "":
-        hit = True
-        board[row][column] = "*"
-    else:
-        board[row][column] = "!" #miss
-
-    while hit:
-        PlayerTurn(board)
+def check_hit(board, row, column, PlayerShips):
+    while True:
         if board[row][column] != "":
-            hit = True
             board[row][column] = "*"
+            if is_all_sunk(PlayerShips):
+                return
+            PlayerTurn(board)
         if board[row][column] == "":
             board[row][column] = "!"  # miss
-            hit = False
+            return
+
