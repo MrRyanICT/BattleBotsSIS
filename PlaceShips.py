@@ -1,3 +1,5 @@
+from Utilities import CovertColumnToNumber
+
 def placeships(playerA,playerB):
     print('Place destroyer (2 boxes)')
     while True:
@@ -14,7 +16,7 @@ def placeships(playerA,playerB):
             print('Error. Please choose a column between A and J')
         else:
             break
-        column_index = column - 1
+        column_index = CovertColumnToNumber(column)
 
 def ConvertColumnToNumber(column:string):
     retrun ord(column) - 65
