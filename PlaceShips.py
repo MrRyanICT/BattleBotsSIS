@@ -7,7 +7,7 @@ player2ships = ["Ship2", "Ship3", "Ship4", "Ship5"]
 print(player1board)
 
 def IllegalSpot(row_index, column_index, ship_size):
-    if row_index + ship_size > 7 and column_index + ship_size > 7:
+    if row_index + ship_size > 9 and column_index + ship_size > 9:
         return False
     else:
         return True
