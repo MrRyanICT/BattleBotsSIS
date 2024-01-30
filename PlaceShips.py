@@ -6,18 +6,16 @@ player1ships = ["Ship2", "Ship3", "Ship4", "Ship5"]
 player2ships = ["Ship2", "Ship3", "Ship4", "Ship5"]
 print(player1board)
 
-
 def IllegalSpot(row_index, column_index, ship_size):
     if row_index + ship_size > 7 and column_index + ship_size > 7:
         return False
     else:
         return True
 
-
-
+def placedestroyer(board):
+    print('Place a destroyer (2 boxes)')
 
 def choose_location():
-
     while True:
         try:
             row = int(input('Which row (Choose a number between 1-10)'))
@@ -37,9 +35,7 @@ def choose_location():
     column_index = CovertColumnToNumber(column)
     return row_index, column_index
 
-def placedestroyer(board):
-    print('Place a destroyer (2 boxes)')
-    row_index, column_index = choose_location()
+def HorV(board, row_index, column_index, size):
     while True: #check for horizontal or vertical
         try:
             orientation = input('You want to place it horizontally or vertically?. Type H or V').upper()
@@ -47,81 +43,43 @@ def placedestroyer(board):
                 print("STOP ERORR")
                 orientation = input('You want to place it horizontally or vertically?. Type H or V').upper()
             if orientation == 'H':
-                for counter in range(2):
+                for counter in range(size):
                     if not board[row_index][column_index + counter] == '':
                         raise NameError("That space isn't free")
                     board[row_index][column_index + counter] = "S"
             if orientation == "V":
-                for counter in range(2):
+                for counter in range(size):
                     board[row_index+  counter][column_index ] = "S"
             break
         except:
             print('Error. This goes over the board')
+    return board
+
+def placedestroyer(board):
+    print('Place a destroyer (2 boxes)')
+    row_index, column_index = choose_location()
+    HorV(board, row_index, column_index, 2)
     return board
 
 def placesubmarine(board):
     print('Place a submarine (3 boxes)')
     row_index, column_index = choose_location()
-    while True: #check for horizontal or vertical
-        try:
-            orientation = input('You want to place it horizontally or vertically?. Type H or V').upper()
-            while orientation != "H" and orientation != "V":
-                print("STOP ERORR")
-                orientation = input('You want to place it horizontally or vertically?. Type H or V').upper()
-            if orientation == 'H':
-                for counter in range(3):
-                    board[row_index][column_index + counter] = "S"
-            if orientation == "V":
-                for counter in range(3):
-                    board[row_index+  counter][column_index ] = "S"
-            break
-        except:
-            print('Error. This goes over the board')
+    HorV(board, row_index, column_index, 3)
     return board
 
 def placebattleship(board):
     print('Place a battleship (4 boxes)')
     row_index, column_index = choose_location()
-    while True: #check for horizontal or vertical
-        try:
-            orientation = input('You want to place it horizontally or vertically?. Type H or V').upper()
-            while orientation != "H" and orientation != "V":
-                print("STOP ERORR")
-                orientation = input('You want to place it horizontally or vertically?. Type H or V').upper()
-            if orientation == 'H':
-                for counter in range(4):
-                    board[row_index][column_index + counter] = "S"
-            if orientation == "V":
-                for counter in range(4):
-                    board[row_index+  counter][column_index ] = "S"
-            break
-        except:
-            print('Error. This goes over the board')
+    HorV(board, row_index, column_index, 4)
     return board
 
 def placecarrier(board):
     print('Place a battleship (4 boxes)')
     row_index, column_index = choose_location()
-    while True: #check for horizontal or vertical
-        try:
-            orientation = input('You want to place it horizontally or vertically?. Type H or V').upper()
-            while orientation != "H" and orientation != "V":
-                print("STOP ERORR")
-                orientation = input('You want to place it horizontally or vertically?. Type H or V').upper()
-            if orientation == 'H':
-                for counter in range(5):
-                    board[row_index][column_index + counter] = "S"
-            if orientation == "V":
-                for counter in range(5):
-                    board[row_index+  counter][column_index ] = "S"
-            break
-        except:
-            print('Error. This goes over the board')
+    HorV(board, row_index, column_index, 5)
     return board
 
 #def checkboard(board):
-
-
 
 print('Player 1 Choose your ships')
 player1board = placedestroyer(player1board)
