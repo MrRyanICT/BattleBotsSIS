@@ -74,7 +74,7 @@ def placebattleship(board):
     return board
 
 def placecarrier(board):
-    print('Place a battleship (4 boxes)')
+    print('Place a battleship (5 boxes)')
     row_index, column_index = choose_location()
     HorV(board, row_index, column_index, 5)
     return board
