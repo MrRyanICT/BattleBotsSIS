@@ -12,9 +12,6 @@ def IllegalSpot(row_index, column_index, ship_size):
     else:
         return True
 
-def placedestroyer(board):
-    print('Place a destroyer (2 boxes)')
-
 def choose_location():
     while True:
         try:
