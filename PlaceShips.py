@@ -50,7 +50,15 @@ def HorV(board, row_index, column_index, size):
                     is_free = False
                 #board[row_index+  counter][column_index ] = "S"
         if not is_free:
-            print('There\'s already a shit there. Go again')
+            print('There\'s already a ship there. Go again')
+            if size == 2:
+                placedestroyer(board)
+            elif size == 3:
+                placesubmarine(board)
+            elif size == 4:
+                placebattleship(board)
+            elif size == 5:
+                placecarrier(board)
         else:
             break
     #write to board after validation
@@ -91,7 +99,7 @@ def placecarrier(board):
 
 print('Player 1 Choose your ships')
 player1board = placedestroyer(player1board)
-#player1board = placesubmarine(player1board)
+player1board = placesubmarine(player1board)
 #player1board = placebattleship(player1board)
 #player1board = placecarrier(player1board)
 print(player1board)
