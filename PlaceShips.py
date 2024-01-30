@@ -33,23 +33,34 @@ def choose_location():
     return row_index, column_index
 
 def HorV(board, row_index, column_index, size):
-    while True: #check for horizontal or vertical
-        try:
+    is_free = True
+    while True: #check if space is free or now
+        orientation = input('You want to place it horizontally or vertically?. Type H or V').upper()
+        while orientation != "H" and orientation != "V":
+            print("STOP ERORR")
             orientation = input('You want to place it horizontally or vertically?. Type H or V').upper()
-            while orientation != "H" and orientation != "V":
-                print("STOP ERORR")
-                orientation = input('You want to place it horizontally or vertically?. Type H or V').upper()
-            if orientation == 'H':
-                for counter in range(size):
-                    if not board[row_index][column_index + counter] == '':
-                        raise NameError("That space isn't free")
-                    board[row_index][column_index + counter] = "S"
-            if orientation == "V":
-                for counter in range(size):
-                    board[row_index+  counter][column_index ] = "S"
+        if orientation == 'H':
+            for counter in range(size):
+                if not board[row_index][column_index + counter] == '':
+                    is_free = False
+                #board[row_index][column_index + counter] = "S"
+        if orientation == "V":
+            for counter in range(size):
+                if not board[row_index][column_index + counter] == '':
+                    is_free = False
+                #board[row_index+  counter][column_index ] = "S"
+        if not is_free:
+            print('There\'s already a shit there. Go again')
+        else:
             break
-        except:
-            print('Error. This goes over the board')
+    #write to board after validation
+    if orientation == 'H':
+        for counter in range(size):
+            board[row_index][column_index + counter] = "S"
+    elif orientation == "V":
+        for counter in range(size):
+            board[row_index + counter][column_index] = "S"
+
     return board
 
 def placedestroyer(board):
