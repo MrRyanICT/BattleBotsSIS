@@ -50,7 +50,7 @@ def HorV(board, row_index, column_index, size):
                     is_free = False
                 #board[row_index+  counter][column_index ] = "S"
         if not is_free:
-            print('There\'s already a shit there. Go again')
+            print('There\'s already a ship there. Go again')
         else:
             break
     #write to board after validation
