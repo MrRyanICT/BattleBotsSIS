@@ -10,11 +10,14 @@ print(player1board)
 def placedestroyer(board):
     print('Place a destroyer (2 boxes)')
     while True:
-        row = int(input('Which row (Choose a number between 1-10)'))
-        if row < 1 or row > 11:
-            print('Error. Please choose a row between 1 and 10')
-        else:
-            break
+        try:
+            row = int(input('Which row (Choose a number between 1-10)'))
+            if row < 1 or row > 11:
+                print('Error. Please choose a row between 1 and 10')
+            else:
+                break
+        except:
+            print('Error. You need to enter a number')
     row_index = row - 1
     while True:
         column = input("Which Column? (Choose a CAPITAL letter between A-J)").upper()
