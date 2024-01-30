@@ -5,7 +5,20 @@ player2board = [['' for i in range(10)] for j in range(10)]
 player1ships = ["Ship2", "Ship3", "Ship4", "Ship5"]
 player2ships = ["Ship2", "Ship3", "Ship4", "Ship5"]
 print(player1board)
+
+
+def IllegalSpot(row_index, column_index, ship_size):
+    if row_index + ship_size > 7 and column_index + ship_size > 7:
+        return False
+    else:
+        return True
+
+
+def placedestroyer(board):
+    print('Place a destroyer (2 boxes)')
+
 def choose_location():
+
     while True:
         try:
             row = int(input('Which row (Choose a number between 1-10)'))
