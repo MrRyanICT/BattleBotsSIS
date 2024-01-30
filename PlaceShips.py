@@ -6,6 +6,12 @@ player1ships = ["Ship2", "Ship3", "Ship4", "Ship5"]
 player2ships = ["Ship2", "Ship3", "Ship4", "Ship5"]
 print(player1board)
 
+def IllegalSpt(row_index, column_index, ship_size):
+    if row_index + ship_size > 7 and column_index + ship_size > 7:
+        return False
+    else:
+        return True
+
 
 def placedestroyer(board):
     print('Place a destroyer (2 boxes)')
