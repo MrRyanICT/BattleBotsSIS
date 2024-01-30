@@ -7,7 +7,7 @@ player2ships = ["Ship2", "Ship3", "Ship4", "Ship5"]
 print(player1board)
 
 def IllegalSpot(row_index, column_index, ship_size):
-    if row_index + ship_size > 7 and column_index + ship_size > 7:
+    if row_index + ship_size > 9 and column_index + ship_size > 9:
         return False
     else:
         return True
@@ -46,7 +46,7 @@ def HorV(board, row_index, column_index, size):
                     board[row_index][column_index + counter] = "S"
             if orientation == "V":
                 for counter in range(size):
-                    board[row_index+  counter][column_index ] = "S"
+                    board[row_index+ counter][column_index ] = "S"
             break
         except:
             print('Error. This goes over the board')
@@ -80,7 +80,7 @@ def placecarrier(board):
 
 print('Player 1 Choose your ships')
 player1board = placedestroyer(player1board)
-#player1board = placesubmarine(player1board)
+player1board = placesubmarine(player1board)
 #player1board = placebattleship(player1board)
 #player1board = placecarrier(player1board)
 print(player1board)
