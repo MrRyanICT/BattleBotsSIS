@@ -50,11 +50,15 @@ def HorV(board, row_index, column_index, size):
             print("STOP ERORR")
             orientation = input('You want to place it horizontally or vertically?. Type H or V').upper()
         if orientation == 'H':
+            if row_index + size > 9:
+                shiptocall(size, board)
             for counter in range(size):
                 if not board[row_index][column_index + counter] == '':
                     is_free = False
                 #board[row_index][column_index + counter] = "S"
         if orientation == "V":
+            if column_index + size > 9:
+                shiptocall(size, board)
             for counter in range(size):
                 if not board[row_index][column_index + counter] == '':
                     is_free = False
