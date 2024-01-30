@@ -59,7 +59,6 @@ def HorV(board, row_index, column_index, size):
                 placebattleship(board)
             elif size == 5:
                 placecarrier(board)
-
         else:
             break
     #write to board after validation
@@ -69,7 +68,6 @@ def HorV(board, row_index, column_index, size):
     elif orientation == "V":
         for counter in range(size):
             board[row_index + counter][column_index] = "S"
-
     return board
 
 def placedestroyer(board):
