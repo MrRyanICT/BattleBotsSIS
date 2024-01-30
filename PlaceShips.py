@@ -144,7 +144,7 @@ def placecarrier(board):
             print('Error. This goes over the board')
     return board
 
-def checkboard(board):
+#def checkboard(board):
 
 
 
