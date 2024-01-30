@@ -32,6 +32,16 @@ def choose_location():
     column_index = CovertColumnToNumber(column)
     return row_index, column_index
 
+def shiptocall(size, board):
+    if size == 2:
+        placedestroyer(board)
+    elif size == 3:
+        placesubmarine(board)
+    elif size == 4:
+        placebattleship(board)
+    elif size == 5:
+        placecarrier(board)
+
 def HorV(board, row_index, column_index, size):
     is_free = True
     while True: #check if space is free or now
@@ -51,14 +61,7 @@ def HorV(board, row_index, column_index, size):
                 #board[row_index+  counter][column_index ] = "S"
         if not is_free:
             print('There\'s already a ship there. Go again')
-            if size == 2:
-                placedestroyer(board)
-            elif size == 3:
-                placesubmarine(board)
-            elif size == 4:
-                placebattleship(board)
-            elif size == 5:
-                placecarrier(board)
+            shiptocall(size, board)
         else:
             break
     #write to board after validation
