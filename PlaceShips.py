@@ -5,10 +5,7 @@ player2board = [['' for i in range(10)] for j in range(10)]
 player1ships = ["Ship2", "Ship3", "Ship4", "Ship5"]
 player2ships = ["Ship2", "Ship3", "Ship4", "Ship5"]
 print(player1board)
-
-
-def placedestroyer(board):
-    print('Place a destroyer (2 boxes)')
+def choose_location():
     while True:
         try:
             row = int(input('Which row (Choose a number between 1-10)'))
@@ -26,6 +23,11 @@ def placedestroyer(board):
         else:
             break
     column_index = CovertColumnToNumber(column)
+    return row_index, column_index
+
+def placedestroyer(board):
+    print('Place a destroyer (2 boxes)')
+    row_index, column_index = choose_location()
     while True: #check for horizontal or vertical
         try:
             orientation = input('You want to place it horizontally or vertically?. Type H or V').upper()
@@ -47,23 +49,7 @@ def placedestroyer(board):
 
 def placesubmarine(board):
     print('Place a submarine (3 boxes)')
-    while True:
-        try:
-            row = int(input('Which row (Choose a number between 1-10)'))
-            if row < 1 or row > 11:
-                print('Error. Please choose a row between 1 and 10')
-            else:
-                break
-        except:
-            print('Error. You need to enter a number')
-    row_index = row - 1
-    while True:
-        column = input("Which Column? (Choose a CAPITAL letter between A-J)").upper()
-        if column < "A" or column > "J":
-            print('Error. Please choose a column between A and J')
-        else:
-            break
-    column_index = CovertColumnToNumber(column)
+    row_index, column_index = choose_location()
     while True: #check for horizontal or vertical
         try:
             orientation = input('You want to place it horizontally or vertically?. Type H or V').upper()
@@ -83,23 +69,7 @@ def placesubmarine(board):
 
 def placebattleship(board):
     print('Place a battleship (4 boxes)')
-    while True:
-        try:
-            row = int(input('Which row (Choose a number between 1-10)'))
-            if row < 1 or row > 11:
-                print('Error. Please choose a row between 1 and 10')
-            else:
-                break
-        except:
-            print('Error. You need to enter a number')
-    row_index = row - 1
-    while True:
-        column = input("Which Column? (Choose a CAPITAL letter between A-J)").upper()
-        if column < "A" or column > "J":
-            print('Error. Please choose a column between A and J')
-        else:
-            break
-    column_index = CovertColumnToNumber(column)
+    row_index, column_index = choose_location()
     while True: #check for horizontal or vertical
         try:
             orientation = input('You want to place it horizontally or vertically?. Type H or V').upper()
@@ -119,23 +89,7 @@ def placebattleship(board):
 
 def placecarrier(board):
     print('Place a battleship (4 boxes)')
-    while True:
-        try:
-            row = int(input('Which row (Choose a number between 1-10)'))
-            if row < 1 or row > 11:
-                print('Error. Please choose a row between 1 and 10')
-            else:
-                break
-        except:
-            print('Error. You need to enter a number')
-    row_index = row - 1
-    while True:
-        column = input("Which Column? (Choose a CAPITAL letter between A-J)").upper()
-        if column < "A" or column > "J":
-            print('Error. Please choose a column between A and J')
-        else:
-            break
-    column_index = CovertColumnToNumber(column)
+    row_index, column_index = choose_location()
     while True: #check for horizontal or vertical
         try:
             orientation = input('You want to place it horizontally or vertically?. Type H or V').upper()
