@@ -48,11 +48,14 @@ def placedestroyer(board):
 def placesubmarine(board):
     print('Place a submarine (3 boxes)')
     while True:
-        row = int(input('Which row (Choose a number between 1-10)'))
-        if row < 1 or row > 11:
-            print('Error. Please choose a row between 1 and 10')
-        else:
-            break
+        try:
+            row = int(input('Which row (Choose a number between 1-10)'))
+            if row < 1 or row > 11:
+                print('Error. Please choose a row between 1 and 10')
+            else:
+                break
+        except:
+            print('Error. You need to enter a number')
     row_index = row - 1
     while True:
         column = input("Which Column? (Choose a CAPITAL letter between A-J)").upper()
@@ -81,11 +84,14 @@ def placesubmarine(board):
 def placebattleship(board):
     print('Place a battleship (4 boxes)')
     while True:
-        row = int(input('Which row (Choose a number between 1-10)'))
-        if row < 1 or row > 11:
-            print('Error. Please choose a row between 1 and 10')
-        else:
-            break
+        try:
+            row = int(input('Which row (Choose a number between 1-10)'))
+            if row < 1 or row > 11:
+                print('Error. Please choose a row between 1 and 10')
+            else:
+                break
+        except:
+            print('Error. You need to enter a number')
     row_index = row - 1
     while True:
         column = input("Which Column? (Choose a CAPITAL letter between A-J)").upper()
@@ -114,11 +120,14 @@ def placebattleship(board):
 def placecarrier(board):
     print('Place a battleship (4 boxes)')
     while True:
-        row = int(input('Which row (Choose a number between 1-10)'))
-        if row < 1 or row > 11:
-            print('Error. Please choose a row between 1 and 10')
-        else:
-            break
+        try:
+            row = int(input('Which row (Choose a number between 1-10)'))
+            if row < 1 or row > 11:
+                print('Error. Please choose a row between 1 and 10')
+            else:
+                break
+        except:
+            print('Error. You need to enter a number')
     row_index = row - 1
     while True:
         column = input("Which Column? (Choose a CAPITAL letter between A-J)").upper()
@@ -144,21 +153,21 @@ def placecarrier(board):
             print('Error. This goes over the board')
     return board
 
-def checkboard(board):
+#def checkboard(board):
 
 
 
 print('Player 1 Choose your ships')
 player1board = placedestroyer(player1board)
-player1board = placesubmarine(player1board)
-player1board = placebattleship(player1board)
-player1board = placecarrier(player1board)
+#player1board = placesubmarine(player1board)
+#player1board = placebattleship(player1board)
+#player1board = placecarrier(player1board)
 print(player1board)
 
-print('Player 2 Choose your ships')
-player2board = placedestroyer(player2board)
-player2board = placesubmarine(player2board)
-player2board = placebattleship(player2board)
-player2board = placecarrier(player2board)
-print(player2board)
+#print('Player 2 Choose your ships')
+#player2board = placedestroyer(player2board)
+#player2board = placesubmarine(player2board)
+#player2board = placebattleship(player2board)
+#player2board = placecarrier(player2board)
+#print(player2board)
 
