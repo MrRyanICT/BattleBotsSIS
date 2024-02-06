@@ -1,4 +1,4 @@
-#from CheckIfHitShip import check_hit
+from CheckIfHitShip import check_hit
 from InitialiseVariables import player1board_view, player2board_view, player1ships, player2ships
 from PlaceShips import destroyer1, submarine1, carrier1, battleship1, destroyer2, submarine2, carrier2, battleship2, Choose_location
 
@@ -20,6 +20,6 @@ def PlayerTurn (Opp_Board):
     print(Opp_Board)
 
     row_index, column_index = Choose_location()
-    #check_hit(Opp_Board, row, column, playerships)
+    check_hit(Opp_Board, row_index, column_index, playerships)
 
 PlayerTurn(player1board_view)
