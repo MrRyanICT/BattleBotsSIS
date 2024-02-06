@@ -51,16 +51,19 @@ def HorV(board, row_index, column_index, size, ship):
                 #board[row_index+  counter][column_index ] = "S"
         if not is_free:
             print('There\'s already a ship there. Go again')
-            if size == 2:
-                Placedestroyer(board)
-            elif size == 3:
-                Placesubmarine(board)
-            elif size == 4:
-                Placebattleship(board)
-            elif size == 5:
-                Placecarrier(board)
-        else:
-            break
+            return board, is_free
+            if not is_free:
+                print('There\'s already a ship there. Go again')
+                if size == 2:
+                    Placedestroyer(board)
+                elif size == 3:
+                    Placesubmarine(board)
+                elif size == 4:
+                    Placebattleship(board)
+                elif size == 5:
+                    Placecarrier(board)
+            else:
+                break
     #write to board after validation
     if orientation == 'H':
         for counter in range(size):
