@@ -66,11 +66,11 @@ def HorV(board, row_index, column_index, size, ship):
         for counter in range(size):
             board[row_index][column_index + counter] = "S"
             ship.append(row_index)
-            ship.append(column_index)
+            ship.append(column_index+ counter)
     elif orientation == "V":
         for counter in range(size):
             board[row_index + counter][column_index] = "S"
-            ship.append(row_index)
+            ship.append(row_index+ counter)
             ship.append(column_index)
     return board
 
@@ -79,36 +79,36 @@ def Placedestroyer(board):
     row_index, column_index = Choose_location()
     destroyer = []
     HorV(board, row_index, column_index, 2, destroyer)
-    return board
+    return board, destroyer
 
 def Placesubmarine(board):
     print('Place a submarine (3 boxes)')
     row_index, column_index = Choose_location()
     submarine = []
     HorV(board, row_index, column_index, 3, submarine)
-    return board
+    return board, submarine
 
 def Placebattleship(board):
     print('Place a battleship (4 boxes)')
     row_index, column_index = Choose_location()
     battleship = []
     HorV(board, row_index, column_index, 4, battleship)
-    return board
+    return board, battleship
 
 def Placecarrier(board):
     print('Place a battleship (5 boxes)')
     row_index, column_index = Choose_location()
     carrier = []
     HorV(board, row_index, column_index, 5, carrier)
-    return board
+    return board, carrier
 
 #def checkboard(board):
 
 print('Player 1 Choose your ships')
-player1board = Placedestroyer(player1board)
-player1board = Placesubmarine(player1board)
-player1board = Placebattleship(player1board)
-player1board = Placecarrier(player1board)
+player1board, destroyer = Placedestroyer(player1board)
+player1board, submarine = Placesubmarine(player1board)
+player1board, battleship = Placebattleship(player1board)
+player1board, carrier = Placecarrier(player1board)
 print(player1board)
 
 #print('Player 2 Choose your ships')
