@@ -89,7 +89,7 @@ def Placesubmarine(board):
         board, valid_location = HorV(board, row_index, column_index, 3, submarine)
         if valid_location:
             break
-    return board
+    return board, submarine
 
 def Placebattleship(board):
     valid_location = False
@@ -122,10 +122,10 @@ player1board, battleship1 = Placebattleship(player1board)
 player1board, carrier1 = Placecarrier(player1board)
 print(player1board)
 
-#print('Player 2 Choose your ships')
-#player2board, destroyer2 = Placedestroyer(player2board)
-#player2board, submarine2 = Placesubmarine(player2board)
-#player2board, battleship2 = Placebattleship(player2board)
-#player2board, carrier2 = Placecarrier(player2board)
-#print(player2board)
+print('Player 2 Choose your ships')
+player2board, destroyer2 = Placedestroyer(player2board)
+player2board, submarine2 = Placesubmarine(player2board)
+player2board, battleship2 = Placebattleship(player2board)
+player2board, carrier2 = Placecarrier(player2board)
+print(player2board)
 
