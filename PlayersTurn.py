@@ -1,4 +1,4 @@
-from CheckIfHitShip import check_hit
+
 from InitialiseVariables import player1board_view, player2board_view, player1ships, player2ships
 from PlaceShips import destroyer1, submarine1, carrier1, battleship1, destroyer2, submarine2, carrier2, battleship2, Choose_location
 
@@ -21,5 +21,23 @@ def PlayerTurn (Opp_Board):
 
     row_index, column_index = Choose_location()
     check_hit(Opp_Board, row_index, column_index, playerships, destroyer, submarine, carrier, battleship)
+
+def check_hit(board, row, column, PlayerShips):
+    while True:
+        if board[row][column] != "":
+            board[row][column] = "*"  # opponent hits ship
+            if is_all_sunk(PlayerShips):
+                return "hI"
+            return False
+            # PlayerTurn(board)
+        if board[row][column] == "":
+            board[row][column] = "!"  # miss
+            return "."
+
+def is_all_sunk(Player: list):
+    if Player[0] == "F" and Player[1] == "F" and Player[2] == "F" and Player[3] == "F":
+        return True
+    else:
+        return False
 
 PlayerTurn(player1board_view)
