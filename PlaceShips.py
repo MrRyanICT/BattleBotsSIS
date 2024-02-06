@@ -113,19 +113,18 @@ def Placecarrier(board):
             break
     return board, carrier
 
-#def checkboard(board):
-
-print('Player 1 Choose your ships')
-player1board, destroyer1 = Placedestroyer(player1board)
-player1board, submarine1 = Placesubmarine(player1board)
-player1board, battleship1 = Placebattleship(player1board)
-player1board, carrier1 = Placecarrier(player1board)
-print(player1board)
-
-print('Player 2 Choose your ships')
-player2board, destroyer2 = Placedestroyer(player2board)
-player2board, submarine2 = Placesubmarine(player2board)
-player2board, battleship2 = Placebattleship(player2board)
-player2board, carrier2 = Placecarrier(player2board)
-print(player2board)
+def setboard(player1board, player2board):
+    print('Player 1 Choose your ships')
+    player1board, destroyer1 = Placedestroyer(player1board)
+    player1board, submarine1 = Placesubmarine(player1board)
+    player1board, battleship1 = Placebattleship(player1board)
+    player1board, carrier1 = Placecarrier(player1board)
+    print(player1board)
+    print('Player 2 Choose your ships')
+    player2board, destroyer2 = Placedestroyer(player2board)
+    player2board, submarine2 = Placesubmarine(player2board)
+    player2board, battleship2 = Placebattleship(player2board)
+    player2board, carrier2 = Placecarrier(player2board)
+    print(player2board)
+    return player1board, player2board
 
