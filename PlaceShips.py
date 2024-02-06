@@ -12,7 +12,7 @@ def IllegalSpot(row_index, column_index, ship_size):
     else:
         return True
 
-def choose_location():
+def Choose_location():
     while True:
         try:
             row = int(input('Which row (Choose a number between 1-10)'))
@@ -79,25 +79,25 @@ def HorV(board, row_index, column_index, size):
 
 def placedestroyer(board):
     print('Place a destroyer (2 boxes)')
-    row_index, column_index = choose_location()
+    row_index, column_index = Choose_location()
     HorV(board, row_index, column_index, 2)
     return board
 
 def placesubmarine(board):
     print('Place a submarine (3 boxes)')
-    row_index, column_index = choose_location()
+    row_index, column_index = Choose_location()
     HorV(board, row_index, column_index, 3)
     return board
 
 def placebattleship(board):
     print('Place a battleship (4 boxes)')
-    row_index, column_index = choose_location()
+    row_index, column_index = Choose_location()
     HorV(board, row_index, column_index, 4)
     return board
 
 def placecarrier(board):
     print('Place a battleship (5 boxes)')
-    row_index, column_index = choose_location()
+    row_index, column_index = Choose_location()
     HorV(board, row_index, column_index, 5)
     return board
 
