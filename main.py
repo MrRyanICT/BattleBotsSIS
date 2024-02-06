@@ -3,5 +3,5 @@ from PlaceShips import setboard
 
 print('Hi')
 print("Battle Bots!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-player1board, player2board = setboard()
+player1board, player2board = setboard(player1board, player2board)
 
