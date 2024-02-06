@@ -1,6 +1,8 @@
-def winorlose(Allsunk):
+PlayerShipsA = ['F','F','F','F']
+
+def winorlose():
     #A is true, B is false
-    if Allsunk == True:
+    if is_all_sunk(PlayerShipsA) == True:
         print('player A wins!')
     else:
         print('player B wins!')
