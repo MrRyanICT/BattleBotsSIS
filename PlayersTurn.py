@@ -32,10 +32,10 @@ def check_hit(board, row, column, PlayerShips):
             # PlayerTurn(board)
         if board[row][column] == "":
             board[row][column] = "!"  # miss
-            return "."
+            return False
 
-def is_all_sunk(Player: list):
-    if Player[0] == "F" and Player[1] == "F" and Player[2] == "F" and Player[3] == "F":
+def is_all_sunk(Player_ship: list):
+    if Player_ship[0] == "F" and Player_ship[1] == "F" and Player_ship[2] == "F" and Player_ship[3] == "F":
         return True
     else:
         return False
