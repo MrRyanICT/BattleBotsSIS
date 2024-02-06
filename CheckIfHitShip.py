@@ -4,7 +4,7 @@ from Isallsunk import is_all_sunk
 def check_hit(board, row, column, PlayerShips):
     while True:
         if board[row][column] != "":
-            board[row][column] = "*"
+            board[row][column] = "*" #opponent hits ship
             if is_all_sunk(PlayerShips):
                 return "hI"
             PlayerTurn(board)

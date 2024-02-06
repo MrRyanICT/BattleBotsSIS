@@ -66,11 +66,11 @@ def HorV(board, row_index, column_index, size, ship):
         for counter in range(size):
             board[row_index][column_index + counter] = "S"
             ship.append(row_index)
-            ship.append(column_index)
+            ship.append(column_index+ counter)
     elif orientation == "V":
         for counter in range(size):
             board[row_index + counter][column_index] = "S"
-            ship.append(row_index)
+            ship.append(row_index+ counter)
             ship.append(column_index)
     return board
 
@@ -79,42 +79,48 @@ def Placedestroyer(board):
     row_index, column_index = Choose_location()
     destroyer = []
     HorV(board, row_index, column_index, 2, destroyer)
-    return board
+    return board, destroyer
 
 def Placesubmarine(board):
-    print('Place a submarine (3 boxes)')
-    row_index, column_index = Choose_location()
-    submarine = []
-    HorV(board, row_index, column_index, 3, submarine)
+    valid_location = False
+    while True:
+        print('Place a submarine (3 boxes)')
+        row_index, column_index = Choose_location()
+        submarine = []
+        board, valid_location = HorV(board, row_index, column_index, 3, submarine)
     return board
 
 def Placebattleship(board):
-    print('Place a battleship (4 boxes)')
-    row_index, column_index = Choose_location()
-    battleship = []
-    HorV(board, row_index, column_index, 4, battleship)
-    return board
+    valid_location = False
+    while True:
+        print('Place a battleship (4 boxes)')
+        row_index, column_index = Choose_location()
+        battleship = []
+        board, valid_location = HorV(board, row_index, column_index, 4, battleship)
+    return board, battleship
 
 def Placecarrier(board):
-    print('Place a battleship (5 boxes)')
-    row_index, column_index = Choose_location()
-    carrier = []
-    HorV(board, row_index, column_index, 5, carrier)
-    return board
+    valid_location = False
+    while True:
+        print('Place a battleship (5 boxes)')
+        row_index, column_index = Choose_location()
+        carrier = []
+        board, valid_location = HorV(board, row_index, column_index, 5, carrier)
+    return board, carrier
 
 #def checkboard(board):
 
 print('Player 1 Choose your ships')
-player1board = Placedestroyer(player1board)
-player1board = Placesubmarine(player1board)
-player1board = Placebattleship(player1board)
-player1board = Placecarrier(player1board)
+player1board, destroyer1 = Placedestroyer(player1board)
+player1board, submarine1 = Placesubmarine(player1board)
+player1board, battleship1 = Placebattleship(player1board)
+player1board, carrier1 = Placecarrier(player1board)
 print(player1board)
 
 #print('Player 2 Choose your ships')
-#player2board = Placedestroyer(player2board)
-#player2board = Placesubmarine(player2board)
-#player2board = Placebattleship(player2board)
-#player2board = Placecarrier(player2board)
+#player2board, destroyer2 = Placedestroyer(player2board)
+#player2board, submarine2 = Placesubmarine(player2board)
+#player2board, battleship2 = Placebattleship(player2board)
+#player2board, carrier2 = Placecarrier(player2board)
 #print(player2board)
 
