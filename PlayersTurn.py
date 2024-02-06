@@ -42,7 +42,7 @@ def Is_Sunk(destroyer, submarine, carrier, battleship, board):
         if board[row][column] == "*":
             complete += 1
     if complete == len(destroyer):
-        player1ships
+        player1ships[0] == "F"
 
 
 
