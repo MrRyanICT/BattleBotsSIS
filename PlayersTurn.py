@@ -28,11 +28,23 @@ def check_hit(board, row, column, PlayerShips):
             board[row][column] = "*"  # opponent hits ship
             if is_all_sunk(PlayerShips):
                 return "hI"
-            return False
-            # PlayerTurn(board)
+
+            #PlayerTurn(board)
         if board[row][column] == "":
             board[row][column] = "!"  # miss
-            return False
+            break
+
+def Is_Sunk(destroyer, submarine, carrier, battleship, board):
+    complete = 0
+    for count in range(len(destroyer)):
+        row = destroyer[count][0]
+        column = destroyer[count][1]
+        if board[row][column] == "*":
+            complete += 1
+    if complete == len(destroyer):
+        # player_ship == "F"
+
+
 
 def is_all_sunk(Player_ship: list):
     if Player_ship[0] == "F" and Player_ship[1] == "F" and Player_ship[2] == "F" and Player_ship[3] == "F":
