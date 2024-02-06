@@ -20,7 +20,6 @@ def PlayerTurn (Opp_Board):
     print(Opp_Board)
 
     row_index, column_index = Choose_location()
-
-    check_hit(Opp_Board, row_index, column_index, playerships)
+    check_hit(Opp_Board, row_index, column_index, playerships, destroyer, submarine, carrier, battleship)
 
 PlayerTurn(player1board_view)
