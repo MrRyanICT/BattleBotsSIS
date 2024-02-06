@@ -91,7 +91,7 @@ def Placesubmarine(board):
         row_index, column_index = Choose_location()
         submarine = []
         board, valid_location = HorV(board, row_index, column_index, 3, submarine)
-    return board
+    return board, submarine
 
 def Placebattleship(board):
     valid_location = False
