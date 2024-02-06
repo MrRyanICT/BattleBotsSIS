@@ -65,11 +65,13 @@ def HorV(board, row_index, column_index, size, ship):
     if orientation == 'H':
         for counter in range(size):
             board[row_index][column_index + counter] = "S"
-            ship.append(row_index, column_index)
+            ship.append(row_index)
+            ship.append(column_index)
     elif orientation == "V":
         for counter in range(size):
             board[row_index + counter][column_index] = "S"
-            ship.append(row_index, column_index)
+            ship.append(row_index)
+            ship.append(column_index)
     return board
 
 def Placedestroyer(board):
