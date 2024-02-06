@@ -1,6 +1,5 @@
 #from CheckIfHitShip import check_hit
 from InitialiseVariables import player1board_view, player2board_view, player1ships, player2ships
-from ChangeToNumber import change
 from PlaceShips import destroyer1, submarine1, carrier1, battleship1, destroyer2, submarine2, carrier2, battleship2, Choose_location
 
 def PlayerTurn (Opp_Board):
