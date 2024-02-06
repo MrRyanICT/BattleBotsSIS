@@ -32,7 +32,7 @@ def Choose_location():
     column_index = CovertColumnToNumber(column)
     return row_index, column_index
 
-def HorV(board, row_index, column_index, size):
+def HorV(board, row_index, column_index, size, ship):
     is_free = True
     while True: #check if space is free or now
         orientation = input('You want to place it horizontally or vertically?. Type H or V').upper()
@@ -65,33 +65,39 @@ def HorV(board, row_index, column_index, size):
     if orientation == 'H':
         for counter in range(size):
             board[row_index][column_index + counter] = "S"
+            ship.append(row_index, column_index)
     elif orientation == "V":
         for counter in range(size):
             board[row_index + counter][column_index] = "S"
+            ship.append(row_index, column_index)
     return board
 
 def Placedestroyer(board):
     print('Place a destroyer (2 boxes)')
     row_index, column_index = Choose_location()
-    HorV(board, row_index, column_index, 2)
+    destroyer = []
+    HorV(board, row_index, column_index, 2, destroyer)
     return board
 
 def Placesubmarine(board):
     print('Place a submarine (3 boxes)')
     row_index, column_index = Choose_location()
-    HorV(board, row_index, column_index, 3)
+    submarine = []
+    HorV(board, row_index, column_index, 3, submarine)
     return board
 
 def Placebattleship(board):
     print('Place a battleship (4 boxes)')
     row_index, column_index = Choose_location()
-    HorV(board, row_index, column_index, 4)
+    battleship = []
+    HorV(board, row_index, column_index, 4, battleship)
     return board
 
 def Placecarrier(board):
     print('Place a battleship (5 boxes)')
     row_index, column_index = Choose_location()
-    HorV(board, row_index, column_index, 5)
+    carrier = []
+    HorV(board, row_index, column_index, 5, carrier)
     return board
 
 #def checkboard(board):
