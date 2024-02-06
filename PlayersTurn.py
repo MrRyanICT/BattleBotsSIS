@@ -1,4 +1,4 @@
-from Isallsunk import is_all_sunk
+
 from InitialiseVariables import player1board_view, player2board_view, player1ships, player2ships
 from PlaceShips import destroyer1, submarine1, carrier1, battleship1, destroyer2, submarine2, carrier2, battleship2, Choose_location
 
@@ -34,5 +34,10 @@ def check_hit(board, row, column, PlayerShips):
             board[row][column] = "!"  # miss
             return "."
 
+def is_all_sunk(Player: list):
+    if Player[0] == "F" and Player[1] == "F" and Player[2] == "F" and Player[3] == "F":
+        return True
+    else:
+        return False
 
 PlayerTurn(player1board_view)
