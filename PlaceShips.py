@@ -54,15 +54,7 @@ def HorV(board, row_index, column_index, size, ship):
             return board, is_free
             if not is_free:
                 print('There\'s already a ship there. Go again')
-                if size == 2:
-                    Placedestroyer(board)
-                elif size == 3:
-                    Placesubmarine(board)
-                elif size == 4:
-                    Placebattleship(board)
-                elif size == 5:
-                    Placecarrier(board)
-            else:
+                return board, is_free
                 break
     #write to board after validation
     if orientation == 'H':
@@ -91,7 +83,7 @@ def Placesubmarine(board):
         row_index, column_index = Choose_location()
         submarine = []
         board, valid_location = HorV(board, row_index, column_index, 3, submarine)
-    return board, submarine
+    return board
 
 def Placebattleship(board):
     valid_location = False
