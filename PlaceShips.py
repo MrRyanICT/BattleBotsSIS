@@ -55,7 +55,6 @@ def HorV(board, row_index, column_index, size, ship):
             return  board, is_free
         else:
             break
-
     #write to board after validation
     if orientation == 'H':
         for counter in range(size):
