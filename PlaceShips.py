@@ -128,5 +128,4 @@ def setboard(player1board, player2board):
     print(player2board)
     return player1board, player2board, destroyer1, destroyer2, submarine1, submarine2, battleship1, battleship2, carrier1, carrier2
 
-player1board, player2board, destroyer1, destroyer2, submarine1, submarine2, battleship1, battleship2, carrier1, carrier2 = setboard(player1board, player2board)
 
