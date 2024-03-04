@@ -22,7 +22,7 @@ def PlayerTurn (Opp_Board, destroyer1, destroyer2, submarine1, submarine2, battl
     row_index, column_index = Choose_location()
     check_hit(Opp_Board, row_index, column_index, playerships, destroyer, submarine, carrier, battleship)
 
-def check_hit(board, row, column, PlayerShips):
+def check_hit(board, row, column, playerships, destroyer, submarine, carrier, battleship):
     while True:
         if board[row][column] != "":
             board[row][column] = "*"  # opponent hits ship
