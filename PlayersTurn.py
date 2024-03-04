@@ -34,7 +34,7 @@ def check_hit(board, row, column, PlayerShips):
             board[row][column] = "!"  # miss
             break
 
-def Is_Sunk(ship, board):
+def Is_Sunk(ship, board, player1ships):
     complete = 0
     for count in range(len(ship)):
         row = ship[count][0]
@@ -52,4 +52,4 @@ def is_all_sunk(Player_ship: list):
     else:
         return False
 
-PlayerTurn(player1board_view)
+
