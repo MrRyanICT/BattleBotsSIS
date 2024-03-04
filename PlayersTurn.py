@@ -52,4 +52,4 @@ def is_all_sunk(Player_ship: list):
     else:
         return False
 
-PlayerTurn(player1board_view)
+
