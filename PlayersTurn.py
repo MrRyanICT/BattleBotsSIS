@@ -34,16 +34,16 @@ def check_hit(board, row, column, PlayerShips):
             board[row][column] = "!"  # miss
             break
 
-def Is_Sunk(destroyer, submarine, carrier, battleship, board):
+def Is_Sunk(ship, board):
     complete = 0
-    for count in range(len(destroyer)):
-        row = destroyer[count][0]
-        column = destroyer[count][1]
+    for count in range(len(ship)):
+        row = ship[count][0]
+        column = ship[count][1]
         if board[row][column] == "*":
             complete += 1
-    if complete == len(destroyer):
+    if complete == len(ship):
         player1ships[0] == "F"
-
+    return player1ships
 
 
 def is_all_sunk(Player_ship: list):
