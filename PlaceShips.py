@@ -128,3 +128,8 @@ def setboard(player1board, player2board):
     return player1board, player2board, destroyer1, destroyer2, submarine1, submarine2, battleship1, battleship2, carrier1, carrier2
 
 
+class Game():
+    player1board = None
+    player2board = Name
+
+game = Game()
