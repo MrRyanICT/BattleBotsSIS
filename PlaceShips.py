@@ -4,7 +4,7 @@ player1board = [['' for i in range(10)] for j in range(10)]
 player2board = [['' for i in range(10)] for j in range(10)]
 player1ships = ["Ship2", "Ship3", "Ship4", "Ship5"]
 player2ships = ["Ship2", "Ship3", "Ship4", "Ship5"]
-print(player1board)
+
 
 def IllegalSpot(row_index, column_index, ship_size):
     if row_index + ship_size > 9 and column_index + ship_size > 9:
@@ -127,9 +127,10 @@ def setboard(player1board, player2board):
     print(player2board)
     return player1board, player2board, destroyer1, destroyer2, submarine1, submarine2, battleship1, battleship2, carrier1, carrier2
 
-
+"""
 class Game():
     player1board = None
     player2board = Name
 
 game = Game()
+"""

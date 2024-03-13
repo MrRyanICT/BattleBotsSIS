@@ -1,16 +1,14 @@
 
-from InitialiseVariables import player1board_view, player2board_view, player1ships, player2ships
+from InitialiseVariables import player1board_view, player2board_view
 from PlaceShips import Choose_location
 
 def PlayerTurn (Opp_Board, destroyer1, destroyer2, submarine1, submarine2, battleship1, battleship2, carrier1, carrier2):
     if Opp_Board == player1board_view:
-        playerships = player1ships
         destroyer = destroyer1
         submarine = submarine1
         carrier = carrier1
         battleship = battleship1
     elif Opp_Board == player2board_view:
-        playerships = player2ships
         destroyer = destroyer2
         submarine = submarine2
         carrier = carrier2
