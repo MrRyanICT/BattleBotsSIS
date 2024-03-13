@@ -46,9 +46,9 @@ def check_hit(board, row, column, destroyer, submarine, carrier, battleship):
 
 def Is_Sunk(board, ship):
     complete = 0
-    for count in range(len(ship)):
-        row = destroyer[count][0]
-        column = destroyer[count][1]
+    for count in range(len(ship)/2):
+        row = ship[2*count-2]
+        column = ship[2*count-1]
         if board[row][column] == "*":
             complete += 1
     if complete == len(ship):
