@@ -20,7 +20,7 @@ def PlayerTurn (Opp_Board, destroyer1, destroyer2, submarine1, submarine2, battl
     print(Opp_Board)
 
     row_index, column_index = Choose_location()
-    check_hit(Opp_Board, row_index, column_index, destroyer, submarine, carrier, battleship)
+    Opp_Board, destroyer, submarine, carrier, battleship = check_hit(Opp_Board, row_index, column_index, destroyer, submarine, carrier, battleship)
 
 def check_hit(board, row, column, destroyer, submarine, carrier, battleship):
 
@@ -46,7 +46,7 @@ def check_hit(board, row, column, destroyer, submarine, carrier, battleship):
         #PlayerTurn(board)
     if board[row][column] == "":
         board[row][column] = "!"  # miss
-    return board
+    return board, destroyer, submarine, carrier, battleship
 
 def Is_Sunk(board, ship):
     complete = 0
