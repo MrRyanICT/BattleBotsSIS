@@ -33,10 +33,12 @@ def check_hit(board, row, column, destroyer, submarine, carrier, battleship):
             if Is_Sunk(board, submarine):
                 if is_all_sunk():
                     print("Game over")
-            if Is_Sunk(board, carrier):
+            carrier = Is_Sunk(board, carrier)
+            if carrier:
                 if is_all_sunk():
                     print("Game over")
-            if Is_Sunk(board, battleship):
+            battleship = Is_Sunk(board, battleship)
+            if battleship:
                 if is_all_sunk():
                     print("Game over")
 
