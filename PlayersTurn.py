@@ -46,8 +46,8 @@ def Is_Sunk(ship, board, player1ships):
     return player1ships
 
 
-def is_all_sunk(Player_ship: list):
-    if Player_ship[0] == "F" and Player_ship[1] == "F" and Player_ship[2] == "F" and Player_ship[3] == "F":
+def is_all_sunk(destroyer, submarine, carrier, battleship):
+    if destroyer and submarine and carrier and battleship:
         return True
     else:
         return False
