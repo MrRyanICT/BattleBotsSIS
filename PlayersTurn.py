@@ -26,17 +26,27 @@ def check_hit(board, row, column, destroyer, submarine, carrier, battleship):
     while True:
         if board[row][column] != "":
             board[row][column] = "*"  # opponent hits ship
-            if Is_Sunk(board, destroyer, submarine, carrier, battleship):
-                return "hI"
+            if Is_Sunk(board, destroyer):
+                if is_all_sunk():
+                    print("Game over")
+            if Is_Sunk(board, submarine):
+                if is_all_sunk():
+                    print("Game over")
+            if Is_Sunk(board, carrier):
+                if is_all_sunk():
+                    print("Game over")
+            if Is_Sunk(board, battleship):
+                if is_all_sunk():
+                    print("Game over")
 
             #PlayerTurn(board)
         if board[row][column] == "":
             board[row][column] = "!"  # miss
             break
 
-def Is_Sunk(board, destroyer, submarine, carrier, battleship):
+def Is_Sunk(board, ship):
     complete = 0
-    for count in range(len(destroyer)):
+    for count in range(len(ship)):
         row = destroyer[count][0]
         column = destroyer[count][1]
         if board[row][column] == "*":
