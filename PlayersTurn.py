@@ -52,8 +52,8 @@ def Is_Sunk(board, ship):
         if board[row][column] == "*":
             complete += 1
     if complete == len(ship)/2:
-        return ship["Sunk"]
-    return
+        return True
+    return False
 
 
 def is_all_sunk(destroyer, submarine, carrier, battleship):
